@@ -11,16 +11,16 @@ Este repositorio consta de diferentes carpetas que se irán añadiendo
 con el paso del tiempo, y que se reacomodarán de vez en cuando.
 
 Por el momento se tiene la siguiente estructura:
-<div hidden>
+<!---
 ```
-@startuml arbolOrganizacion 
+@startsalt arbolOrganizacion 
 {
 {T
 + 
 }
 }
-@enduml
+@endsalt
 ```
-</div>
+--->
 
 ![](firstDiagram.svg)
