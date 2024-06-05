@@ -13,13 +13,13 @@ con el paso del tiempo, y que se reacomodarán de vez en cuando.
 Por el momento se tiene la siguiente estructura:
 <div hidden>
 ```
-@startsalt arbolOrganizacion 
+@startuml arbolOrganizacion 
 {
 {T
 + 
 }
 }
-@endsalt 
+@enduml
 ```
 </div>
 
