@@ -28,11 +28,13 @@ de la forma
  Cuando se define una actividad a través de `*def`, la id
  reemplazará al nombre de la actividad al momento de definir
  un horario y deberá ser escrito sin comillas:
+
+ `*def id(int) "Actividad a realizar"`
+
  ```c++
-   *def "Actividad"  1
+   *def 1 "Actividad" 
    1: "5m 30s"
  ```
- `*def "Actividad a realizar" id (int)`
 
 ## Descanso
  Por defecto el descanso es de 15 segundos.
@@ -68,10 +70,10 @@ de la forma
 # Ejemplo del archivo de actividades
 
 ```c++
- *def "Mi actividad" 1
- *def "Mi actividad 2" 2
+ *def 1 "Mi actividad"
+ *def 2 "Mi actividad 2"
  *def __descanso__ "15s"
- *def "__descanso__" 3
+ *def 3 "__descanso__"
  //*def __notif__ tts "!__actividad__!"
  *def __init__ tts "comienza !__actividad__!"
  *def __init__ tts "finaliza !__actividad__! comienza descanso"
