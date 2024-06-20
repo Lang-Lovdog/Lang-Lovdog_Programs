@@ -11,16 +11,23 @@ de la forma
 ```
 
 # Macros y palabras reservadas
-Las palabras reservadas están 
 
 ## Sobre las palabras reservadas
  Las palabras reservadas se deben escribir sin comillas y su
- forma es `__palabra__`, si por algún motivo, el usuario
+ forma es `__palabra__`.
+
+ Si por algún motivo, el usuario
  define `"__palabra__"`, el sistema lo reconocerá como una
  actividad.
- Del mismo modo, cuando se define una actividad a través de
- `*def`, la id reemplazará al valor izquierdo al momento de
- definir un horario y deberá ser escrito sin comillas.
+
+ Cuando se define una actividad a través de `*def`, la id
+ reemplazará al nombre de la actividad al momento de definir
+ un horario y deberá ser escrito sin comillas:
+ ```c++
+   *def "Actividad"  1
+   1: "5m 30s"
+ ```
+ 
 
 ## Definición de actividades en el inicio del archivo
  Para definir actividades que se repetirán, el sistema deberá
@@ -28,9 +35,11 @@ Las palabras reservadas están
  `*def "Actividad a realizar" id (int)`
 
 ## Descanso
- El descanso se fija de manera manual en el archivo o de manera
- interactiva en la línea de comandos.
- `*def __descanso__` "Xs Ym Zh"
+ Por defecto el descanso es de 15 segundos.
+
+ El descanso se puede indicar de manera manual en el archivo
+ o de manera interactiva en la línea de comandos.
+ `*def __descanso__ "Xs Ym Zh"`
 
 ## Notificaciones
  Para que el programa pueda notificar al usuario del término o
