@@ -29,7 +29,7 @@ de la forma
  reemplazará al nombre de la actividad al momento de definir
  un horario y deberá ser escrito sin comillas:
 
- `*def id(int) "Actividad a realizar"`
+ `*def id "Actividad a realizar"`
 
  ```c++
    *def 1 "Actividad" 
