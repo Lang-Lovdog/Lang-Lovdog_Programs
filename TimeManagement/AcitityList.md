@@ -19,6 +19,11 @@ de la forma
  Si por algún motivo, el usuario
  define `"__palabra__"`, el sistema lo reconocerá como una
  actividad.
+ 
+
+## Definición de actividades en el inicio del archivo
+ Para definir actividades que se repetirán, el sistema deberá
+ leer un prefijo (símbolo reservado de inicio):
 
  Cuando se define una actividad a través de `*def`, la id
  reemplazará al nombre de la actividad al momento de definir
@@ -27,11 +32,6 @@ de la forma
    *def "Actividad"  1
    1: "5m 30s"
  ```
- 
-
-## Definición de actividades en el inicio del archivo
- Para definir actividades que se repetirán, el sistema deberá
- leer un prefijo (símbolo reservado de inicio):
  `*def "Actividad a realizar" id (int)`
 
 ## Descanso
