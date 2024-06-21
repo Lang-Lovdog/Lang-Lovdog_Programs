@@ -24,3 +24,4 @@ Por el momento se tiene la siguiente estructura:
 @endsalt
 ```
 --->
+![](arbolOrganizacion.svg)
