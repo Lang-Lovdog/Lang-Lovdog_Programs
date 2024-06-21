@@ -17,12 +17,10 @@ Por el momento se tiene la siguiente estructura:
 {
 {T
 +
-+ TimeManagement
-++ TEST
+++ TimeManagement
++++ TEST
 }
 }
 @endsalt
 ```
 --->
-
-![](firstDiagram.svg)
