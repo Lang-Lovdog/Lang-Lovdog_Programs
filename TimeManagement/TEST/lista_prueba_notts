@@ -1,0 +1,11 @@
+*def __descanso__ 12s
+*def 1 "Codificar"
+*def 2 "Revisar"
+*def __shell__ True
+*def __init__ echo "Inicia !__actividad__!"
+*def __iniv__ echo "Termina !__actividad__!"
+
+1: "12s"
+2: "15s"
+1: "15s"
+2: "12s"

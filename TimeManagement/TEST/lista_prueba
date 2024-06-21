@@ -1,0 +1,10 @@
+*def __descanso__ 12s
+*def 1 "Codificar"
+*def 2 "Revisar"
+*def __init__ mpgtts123,"Inicia tiempo de !__actividad__!"
+*def __iniv__ mpgtts123,"Termina tiempo de !__actividad__!"
+
+1: "12s"
+2: "15s"
+1: "15s"
+2: "12s"
