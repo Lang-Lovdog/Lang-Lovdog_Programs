@@ -104,6 +104,8 @@ def definicionesList(line):
         definiciones['__shell__']=True
         return
     if lId in reservados_commands:
+        if lValor.startswith('"') and lValor.endswith('"'):
+            lValor=lValor[1:-1]
         definiciones[lId]=lValor.split(',')
         if verbose_list:
             print("Redefinición de %s como %s" % (lId, lValor))
@@ -146,6 +148,8 @@ def ReadFile(path):
             if comentario_bool:
                 continue
             getListElement(line)
+    if definiciones['__descanso__'].startswith('"') and definiciones['__descanso__'].endswith('"'):
+        definiciones['__descanso__']=definiciones['__descanso__'][1:-1]
     listaActividades_array.append(Activity("Descanso", definiciones['__descanso__']))
 
 def commandReplacement(commandList, actividad):
@@ -237,7 +241,9 @@ def iniciaLista_verbose(listaActividades_array):
 
 def imprimeAyuda():
     print("Temporizador de lista de actividades\n",
-          "Uso: ", sys.argv[0], "archivo [opciones]\n",
+          "Uso: ", 
+          os.path.basename(sys.argv[0]),
+          "archivo [opciones]\n",
           "Opciones:\n",
           "  -d <segundos>  Duración de cada actividad\n",
           "  -no            No mostrar salida estándar del comando de notificación\n",
@@ -312,5 +318,5 @@ if __name__ == '__main__':
         printList(listaActividades_array)
         iniciaLista_verbose(listaActividades_array)
         exit(0)
-      iniciaLista(listaActividades_array)
-      exit(0)
+  iniciaLista(listaActividades_array)
+  exit(0)
