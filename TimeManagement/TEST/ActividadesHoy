@@ -1,0 +1,14 @@
+*def __shell__ True
+*def __init__ bash -c "mpgtts123 'Hora de !__actividad__!'; mpv --save-position-on-quit=yes -no-video --volume=50 ~/Música/playlists/YouTube_Eve.m3u8"
+*def __iniv__ bash -c "pkill mpv; buen_dia.sh"
+*def __descanso__ "8m"
+
+"Acomodar": "25m"
+"Barrer": "20m"
+"Recoger": "15m"
+"Trapear": "30m"
+"Comer": "20m"
+"Trabajar Fichas Descriptivas": "25m"
+"Trabajar Fichas Descriptivas": "25m"
+"Trabajar Horarios Lovdog Tools": "25m"
+"Trabajar Horarios Lovdog Tools": "25m"

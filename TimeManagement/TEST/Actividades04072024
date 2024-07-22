@@ -1,0 +1,22 @@
+*def __shell__ True
+*def __init__ bash -c "buen_dia.sh; mpgtts123 '!__actividad__!.' piper random; mpv --save-position-on-quit=yes -no-video --volume=75 ~/Música/Default.m3u"
+*def __iniv__ bash -c "pkill mpv;"
+*def __descanso__ "8m"
+*def a "ACTIVIDADES: Recoger la sala: Cesar y Sarahy, Tender las camas: Brandon y Yesenia, Barrer los cuartos: Brayan."
+*def b "ACTIVIDADES: Lavar trastes: Brandon y Cesar. Trapear: Sarahy y Yesenia. Limpiar a pochis: Brandon. Lavar baños: Brayan."
+
+//a : "25m"
+//a : "20m"
+//a : "25m"
+//a : "20m"
+//a : "25m"
+//a : "20m"
+//a : "25m"
+
+b : "20m"
+b : "25m"
+b : "20m"
+b : "25m"
+b : "20m"
+b : "25m"
+b : "20m"

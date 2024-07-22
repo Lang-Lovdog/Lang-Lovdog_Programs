@@ -1,0 +1,29 @@
+*def __init__ bash -c "buen_dia.sh; parlaClima; mpv --save-position-on-quit=yes -no-video --volume=78 --playlist=$HOME/Música/DefaultAlarma.m3u"
+*def __iniv__ bash -c "pkill mpv; "
+*def __descanso__ "6m"
+*def w "_"
+
+// Primera Hora
+w: "6m"
+w: "6m"
+w: "6m"
+w: "6m"
+w: "6m"
+// Segunda Hora
+w: "6m"
+w: "6m"
+w: "6m"
+w: "6m"
+w: "6m"
+// Tercera Hora
+w: "6m"
+w: "6m"
+w: "6m"
+w: "6m"
+w: "6m"
+// Cuarta Hora
+w: "6m"
+w: "6m"
+w: "6m"
+w: "6m"
+w: "6m"

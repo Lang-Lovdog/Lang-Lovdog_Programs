@@ -1,0 +1,53 @@
+*def __init__ bash -c "buen_dia.sh; parlaClima; mpv --save-position-on-quit=yes -no-video --volume=75 $HOME/Música/Default.m3u"
+*def __iniv__ bash -c "pkill mpv; "
+*def __descanso__ "6m"
+*def w "_"
+
+// Primera Hora
+w: "9m"
+w: "9m"
+w: "9m"
+w: "9m"
+w: "9m"
+// Segunda Hora
+w: "9m"
+w: "9m"
+w: "9m"
+w: "9m"
+w: "9m"
+// Tercera Hora
+w: "9m"
+w: "9m"
+w: "9m"
+w: "9m"
+w: "9m"
+// Cuarta Hora
+w: "9m"
+w: "9m"
+w: "9m"
+w: "9m"
+w: "9m"
+// Quinta Hora
+w: "9m"
+w: "9m"
+w: "9m"
+w: "9m"
+w: "9m"
+// Sexta Hora
+w: "9m"
+w: "9m"
+w: "9m"
+w: "9m"
+w: "9m"
+// Septima Hora
+w: "9m"
+w: "9m"
+w: "9m"
+w: "9m"
+w: "9m"
+// Octava Hora
+w: "9m"
+w: "9m"
+w: "9m"
+w: "9m"
+w: "9m"

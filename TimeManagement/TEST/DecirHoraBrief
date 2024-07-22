@@ -1,0 +1,4 @@
+*def __init__ "buen_dia.sh"
+*def w "_"
+
+w: "6m"

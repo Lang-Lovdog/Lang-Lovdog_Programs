@@ -1,0 +1,29 @@
+*def __shell__ True
+*def __init__ bash -c "buen_dia.sh; parlaClima"
+*def __descanso__ "6m"
+*def w "_"
+
+// Hora 1
+w: "6m"
+w: "6m"
+w: "6m"
+w: "6m"
+w: "6m"
+// Hora 2
+w: "6m"
+w: "6m"
+w: "6m"
+w: "6m"
+w: "6m"
+// Hora 3
+w: "6m"
+w: "6m"
+w: "6m"
+w: "6m"
+w: "6m"
+// Hora 4
+w: "6m"
+w: "6m"
+w: "6m"
+w: "6m"
+w: "6m"
