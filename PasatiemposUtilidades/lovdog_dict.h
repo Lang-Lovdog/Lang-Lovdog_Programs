@@ -23,10 +23,10 @@ char* lovdog_dict_get(const dict* d,const char *key);
 char  lovdog_dict_duplicate(const dict* d,const char *key);
 void  lovdog_dict_wo_keshimasu(dict* d);
 void  lovdog_dict_create_dict(dict* d);
-unsigned int lovdog_dict_print_rec(dict *d);
+unsigned int lovdog_dict_print_rec(const dict *d);
 
 /*_________________________________________________________*/
-unsigned int lovdog_dict_print_rec(dict *d) {
+unsigned int lovdog_dict_print_rec(const dict *d) {
   if(!d->head) return 0;
   if(!d->size) return 0;
   dict_T *current = d->head;
@@ -73,7 +73,7 @@ void lovdog_dict_add(dict* d,char *key,char *value) {
 char* lovdog_dict_get(const dict* d, const char *key) {
   dict_T *current = d->head;
   while (current){
-    if (current->key == key)
+    if (!strcmp(current->key,key))
       return current->value;
     current = current->next;
   }

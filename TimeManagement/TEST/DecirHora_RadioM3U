@@ -1,4 +1,4 @@
-*def __init__ bash -c "buen_dia.sh; parlaClima; mpv --save-position-on-quit=yes -no-video --volume=75 $HOME/Música/Default.m3u --input-ipc-server=/tmp/mpvsocket"
+*def __init__ bash -c "buen_dia.sh; parlaClima; mpv --save-position-on-quit=yes -no-video --volume=85 ./lista_temporal_fondo.m3u"
 *def __iniv__ bash -c "pkill mpv; "
 *def __descanso__ "6m"
 *def w "_"

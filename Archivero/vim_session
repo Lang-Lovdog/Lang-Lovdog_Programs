@@ -1,0 +1,576 @@
+let SessionLoad = 1
+let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-1 siso=-1
+let v:this_session=expand("<sfile>:p")
+silent only
+silent tabonly
+cd ~/Documentos/myPrograms/Archivero
+if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
+  let s:wipebuf = bufnr('%')
+endif
+let s:shortmess_save = &shortmess
+if &shortmess =~ 'A'
+  set shortmess=aoOA
+else
+  set shortmess=aoO
+endif
+badd +438 database.c
+badd +58 lovdog_char.c
+badd +306 dirlist.c
+badd +1 database.h
+badd +1 lovdog_char.h
+badd +1 dirlist.h
+badd +70 main.c
+badd +57 lio_tools.c
+badd +1 lio_tools.h
+badd +2 .archivero_fm
+badd +34 main.h
+argglobal
+%argdel
+tabnew +setlocal\ bufhidden=wipe
+tabnew +setlocal\ bufhidden=wipe
+tabnew +setlocal\ bufhidden=wipe
+tabnew +setlocal\ bufhidden=wipe
+tabnew +setlocal\ bufhidden=wipe
+tabrewind
+edit database.h
+let s:save_splitbelow = &splitbelow
+let s:save_splitright = &splitright
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+let &splitbelow = s:save_splitbelow
+let &splitright = s:save_splitright
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe 'vert 1resize ' . ((&columns * 78 + 82) / 165)
+exe 'vert 2resize ' . ((&columns * 86 + 82) / 165)
+argglobal
+balt database.c
+setlocal fdm=expr
+setlocal fde=nvim_treesitter#foldexpr()
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+1
+normal! zo
+19
+normal! zo
+60
+normal! zo
+73
+normal! zo
+79
+normal! zo
+let s:l = 84 - ((54 * winheight(0) + 26) / 52)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 84
+normal! 0
+wincmd w
+argglobal
+if bufexists(fnamemodify("database.c", ":p")) | buffer database.c | else | edit database.c | endif
+if &buftype ==# 'terminal'
+  silent file database.c
+endif
+balt database.h
+setlocal fdm=expr
+setlocal fde=nvim_treesitter#foldexpr()
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+65
+normal! zo
+68
+normal! zo
+83
+normal! zo
+324
+normal! zo
+363
+normal! zo
+324
+normal! zc
+374
+normal! zo
+374
+normal! zc
+433
+normal! zo
+484
+normal! zo
+492
+normal! zo
+497
+normal! zo
+505
+normal! zo
+505
+normal! zc
+497
+normal! zc
+512
+normal! zo
+521
+normal! zo
+534
+normal! zo
+534
+normal! zc
+570
+normal! zo
+570
+normal! zc
+602
+normal! zo
+602
+normal! zc
+632
+normal! zo
+let s:l = 441 - ((67 * winheight(0) + 26) / 52)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 441
+normal! 014|
+wincmd w
+exe 'vert 1resize ' . ((&columns * 78 + 82) / 165)
+exe 'vert 2resize ' . ((&columns * 86 + 82) / 165)
+tabnext
+edit lovdog_char.h
+let s:save_splitbelow = &splitbelow
+let s:save_splitright = &splitright
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+let &splitbelow = s:save_splitbelow
+let &splitright = s:save_splitright
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe 'vert 1resize ' . ((&columns * 81 + 82) / 165)
+exe 'vert 2resize ' . ((&columns * 83 + 82) / 165)
+argglobal
+balt lovdog_char.c
+setlocal fdm=expr
+setlocal fde=nvim_treesitter#foldexpr()
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+1
+normal! zo
+let s:l = 58 - ((24 * winheight(0) + 26) / 52)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 58
+let s:c = 66 - ((55 * winwidth(0) + 40) / 81)
+if s:c > 0
+  exe 'normal! ' . s:c . '|zs' . 66 . '|'
+else
+  normal! 066|
+endif
+wincmd w
+argglobal
+if bufexists(fnamemodify("lovdog_char.c", ":p")) | buffer lovdog_char.c | else | edit lovdog_char.c | endif
+if &buftype ==# 'terminal'
+  silent file lovdog_char.c
+endif
+balt lovdog_char.h
+setlocal fdm=expr
+setlocal fde=nvim_treesitter#foldexpr()
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+54
+normal! zo
+61
+normal! zo
+54
+normal! zc
+let s:l = 53 - ((49 * winheight(0) + 26) / 52)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 53
+normal! 0
+wincmd w
+exe 'vert 1resize ' . ((&columns * 81 + 82) / 165)
+exe 'vert 2resize ' . ((&columns * 83 + 82) / 165)
+tabnext
+edit dirlist.h
+let s:save_splitbelow = &splitbelow
+let s:save_splitright = &splitright
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+let &splitbelow = s:save_splitbelow
+let &splitright = s:save_splitright
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe 'vert 1resize ' . ((&columns * 76 + 82) / 165)
+exe 'vert 2resize ' . ((&columns * 88 + 82) / 165)
+argglobal
+balt dirlist.c
+setlocal fdm=expr
+setlocal fde=nvim_treesitter#foldexpr()
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+1
+normal! zo
+20
+normal! zo
+34
+normal! zo
+37
+normal! zo
+45
+normal! zo
+60
+normal! zo
+let s:l = 69 - ((43 * winheight(0) + 26) / 52)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 69
+let s:c = 38 - ((32 * winwidth(0) + 38) / 76)
+if s:c > 0
+  exe 'normal! ' . s:c . '|zs' . 38 . '|'
+else
+  normal! 038|
+endif
+wincmd w
+argglobal
+if bufexists(fnamemodify("dirlist.c", ":p")) | buffer dirlist.c | else | edit dirlist.c | endif
+if &buftype ==# 'terminal'
+  silent file dirlist.c
+endif
+balt dirlist.h
+setlocal fdm=expr
+setlocal fde=nvim_treesitter#foldexpr()
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+20
+normal! zo
+20
+normal! zc
+124
+normal! zo
+129
+normal! zo
+133
+normal! zo
+135
+normal! zo
+141
+normal! zo
+146
+normal! zo
+151
+normal! zo
+156
+normal! zo
+163
+normal! zo
+151
+normal! zc
+124
+normal! zc
+228
+normal! zo
+230
+normal! zo
+253
+normal! zo
+253
+normal! zc
+230
+normal! zc
+228
+normal! zc
+270
+normal! zo
+311
+normal! zo
+330
+normal! zo
+330
+normal! zc
+341
+normal! zo
+347
+normal! zo
+347
+normal! zc
+357
+normal! zo
+365
+normal! zo
+let s:l = 305 - ((285 * winheight(0) + 26) / 52)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 305
+normal! 0
+wincmd w
+exe 'vert 1resize ' . ((&columns * 76 + 82) / 165)
+exe 'vert 2resize ' . ((&columns * 88 + 82) / 165)
+tabnext
+edit lio_tools.h
+let s:save_splitbelow = &splitbelow
+let s:save_splitright = &splitright
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+let &splitbelow = s:save_splitbelow
+let &splitright = s:save_splitright
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe 'vert 1resize ' . ((&columns * 81 + 82) / 165)
+exe 'vert 2resize ' . ((&columns * 83 + 82) / 165)
+argglobal
+balt lio_tools.c
+setlocal fdm=expr
+setlocal fde=nvim_treesitter#foldexpr()
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+1
+normal! zo
+let s:l = 5 - ((4 * winheight(0) + 26) / 52)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 5
+normal! 07|
+wincmd w
+argglobal
+if bufexists(fnamemodify("lio_tools.c", ":p")) | buffer lio_tools.c | else | edit lio_tools.c | endif
+if &buftype ==# 'terminal'
+  silent file lio_tools.c
+endif
+balt lio_tools.h
+setlocal fdm=expr
+setlocal fde=nvim_treesitter#foldexpr()
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+56
+normal! zo
+57
+normal! zo
+let s:l = 57 - ((53 * winheight(0) + 26) / 52)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 57
+normal! 021|
+wincmd w
+exe 'vert 1resize ' . ((&columns * 81 + 82) / 165)
+exe 'vert 2resize ' . ((&columns * 83 + 82) / 165)
+tabnext
+edit main.h
+let s:save_splitbelow = &splitbelow
+let s:save_splitright = &splitright
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
+let &splitbelow = s:save_splitbelow
+let &splitright = s:save_splitright
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe 'vert 1resize ' . ((&columns * 82 + 82) / 165)
+exe '2resize ' . ((&lines * 41 + 27) / 55)
+exe 'vert 2resize ' . ((&columns * 82 + 82) / 165)
+exe '3resize ' . ((&lines * 10 + 27) / 55)
+exe 'vert 3resize ' . ((&columns * 82 + 82) / 165)
+argglobal
+balt main.c
+setlocal fdm=expr
+setlocal fde=nvim_treesitter#foldexpr()
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+1
+normal! zo
+5
+normal! zo
+13
+normal! zo
+let s:l = 23 - ((22 * winheight(0) + 26) / 52)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 23
+normal! 042|
+wincmd w
+argglobal
+if bufexists(fnamemodify("main.c", ":p")) | buffer main.c | else | edit main.c | endif
+if &buftype ==# 'terminal'
+  silent file main.c
+endif
+balt main.h
+setlocal fdm=expr
+setlocal fde=nvim_treesitter#foldexpr()
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+10
+normal! zo
+28
+normal! zo
+52
+normal! zo
+53
+normal! zo
+55
+normal! zo
+56
+normal! zo
+67
+normal! zo
+74
+normal! zo
+83
+normal! zo
+99
+normal! zo
+109
+normal! zo
+111
+normal! zo
+112
+normal! zo
+121
+normal! zo
+124
+normal! zo
+let s:l = 71 - ((24 * winheight(0) + 20) / 41)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 71
+normal! 012|
+wincmd w
+argglobal
+enew
+balt main.c
+setlocal fdm=syntax
+setlocal fde=nvim_treesitter#foldexpr()
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+wincmd w
+exe 'vert 1resize ' . ((&columns * 82 + 82) / 165)
+exe '2resize ' . ((&lines * 41 + 27) / 55)
+exe 'vert 2resize ' . ((&columns * 82 + 82) / 165)
+exe '3resize ' . ((&lines * 10 + 27) / 55)
+exe 'vert 3resize ' . ((&columns * 82 + 82) / 165)
+tabnext
+edit .archivero_fm
+argglobal
+balt main.c
+setlocal fdm=syntax
+setlocal fde=nvim_treesitter#foldexpr()
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+let s:l = 2 - ((1 * winheight(0) + 26) / 52)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 2
+normal! 0
+tabnext 5
+if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
+  silent exe 'bwipe ' . s:wipebuf
+endif
+unlet! s:wipebuf
+set winheight=1 winwidth=20
+let &shortmess = s:shortmess_save
+let s:sx = expand("<sfile>:p:r")."x.vim"
+if filereadable(s:sx)
+  exe "source " . fnameescape(s:sx)
+endif
+let &g:so = s:so_save | let &g:siso = s:siso_save
+set hlsearch
+nohlsearch
+doautoall SessionLoadPost
+unlet SessionLoad
+" vim: set ft=vim :

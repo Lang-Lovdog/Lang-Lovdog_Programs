@@ -1,6 +1,7 @@
 import os
 import sys
 import subprocess
+import multiprocessing
 from time import sleep
 
 ########################################
@@ -28,6 +29,7 @@ comentario_bool=False
 subprocess_stdout_bool=True
 verbose_commands=True
 verbose_list=True
+hilo_notificacionA=None
 ########################################
 
 ########################################
@@ -209,34 +211,44 @@ def ImprimeContador(segundos):
         sleep(1)
         print(" "*len(str(i)),end="\r")
 
-def iniciaLista(listaActividades_array):
+def CountdownActivity(a, contador_func):
+    global hilo_notificacionA
+    hilo_notificacionA= \
+        multiprocessing.Process(target=Notificacion,args=(a.Name,))
+    #Notificacion(a.Name)
+    hilo_notificacionA.start()
+    contador_func(a.Time)
+    hilo_notificacionA.terminate()
+    del hilo_notificacionA
+    Notificacion(a.Name, False)
+
+
+def iniciaLista(listaActividades_array,contador_func):
+    
     descanso=listaActividades_array[-1]
     for a in listaActividades_array:
         if a.Name=="Descanso":
             continue
-        Notificacion(a.Name)
-        sleep(a.Time)
-        Notificacion(a.Name, False)
+        CountdownActivity(a, contador_func)
         if descanso.Time>0:
-            Notificacion(descanso.Name)
-            sleep(descanso.Time)
-            Notificacion(descanso.Name, False)
+            CountdownActivity(descanso, contador_func)
     Notificacion("lista de actividades", False)
 
-def iniciaLista_verbose(listaActividades_array):
-    descanso=listaActividades_array[-1]
-    for a in listaActividades_array:
-        if a.Name=="Descanso":
-            continue
-        Notificacion(a.Name)
-        ImprimeContador(a.Time)
-        Notificacion(a.Name, False)
-        if descanso.Time>0:
-            Notificacion(descanso.Name)
-            ImprimeContador(descanso.Time)
-            Notificacion(descanso.Name, False)
-    Notificacion("lista de actividades", False)
-
+########################################
+#def iniciaLista_verbose(listaActividades_array):
+#    descanso=listaActividades_array[-1]
+#    for a in listaActividades_array:
+#        if a.Name=="Descanso":
+#            continue
+#        Notificacion(a.Name)
+#        ImprimeContador(a.Time)
+#        Notificacion(a.Name, False)
+#        if descanso.Time>0:
+#            Notificacion(descanso.Name)
+#            ImprimeContador(descanso.Time)
+#            Notificacion(descanso.Name, False)
+#    Notificacion("lista de actividades", False)
+#
 ########################################
 
 def imprimeAyuda():
@@ -309,14 +321,14 @@ if __name__ == '__main__':
   for arg in sys.argv[2:]:
       if sys.argv[2] == '-v':
         printList(listaActividades_array)
-        iniciaLista(listaActividades_array)
+        iniciaLista(listaActividades_array,sleep)
         exit(0)
       if sys.argv[2] == '-c':
-        iniciaLista_verbose(listaActividades_array)
+        iniciaLista(listaActividades_array,ImprimeContador)
         exit(0)
       if sys.argv[2] == '-vc' or sys.argv[2] == '-cv':
         printList(listaActividades_array)
-        iniciaLista_verbose(listaActividades_array)
+        iniciaLista(listaActividades_array,ImprimeContador)
         exit(0)
-  iniciaLista(listaActividades_array)
+  iniciaLista(listaActividades_array,sleep)
   exit(0)

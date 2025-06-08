@@ -1,0 +1,20 @@
+@startuml
+start
+if(Database exists?) then (yes)
+  :Get database;
+else (no)
+  :Ask for
+  initialization;
+  stop
+endif
+:Get directory content
+recursively]
+if(Files in database?) then (no)
+  :Announce
+  new files;
+else (yes)
+  :Announce
+  no new files;
+endif
+stop
+@enduml

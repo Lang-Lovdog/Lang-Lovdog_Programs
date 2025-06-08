@@ -1,0 +1,68 @@
+@startuml
+start
+switch(action)
+  case(tag)
+    if(Database exists?) then (yes)
+      :Get database;
+      :Add element to Wordbox::Tag;
+      :Save database;
+      stop
+    else (no)
+      :Ask for
+      initialization;
+      stop
+    endif
+  case(family)
+    if(Database exists?) then (yes)
+      :Get database;
+      :Add element to Wordbox::Family;
+      :Save database;
+      stop
+    else (no)
+      :Ask for
+      initialization;
+      stop
+    endif
+  case(classify)
+    if(Database exists?) then (yes)
+      :Get database;
+      :Get file from data;
+      :Set file tags and or family;
+      :Save database;
+      stop
+    else (no)
+      :Ask for
+      initialization;
+      stop
+    endif
+  case(update)
+    if(Database exists?) then (yes)
+      :Get database;
+      :Get file from data;
+      :Recurse scan;
+      :Save files data;
+      :Save database;
+      stop
+    else (no)
+      :Ask for
+      initialization;
+      stop
+    endif
+  case(depurate)
+    if(Database exists?) then (yes)
+      :Get database;
+      :Recurse scan;
+      while(File in line?)
+      if(file exists?) then (no)
+        :Delete record;
+      endif
+        :Next file;
+    endwhile
+    stop
+    else (no)
+      :Ask for
+      initialization;
+      stop
+    endif
+endswitch
+@enduml
